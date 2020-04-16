@@ -1,0 +1,239 @@
+[
+    {
+        "sentData": null,
+        "receivedData": {
+            "flow-node-inventory:table": [
+                {
+                    "id": 0,
+                    "opendaylight-flow-table-statistics:flow-table-statistics": {
+                        "active-flows": 5,
+                        "packets-looked-up": 34,
+                        "packets-matched": 30
+                    },
+                    "flow": [
+                        {
+                            "id": "L2switch-2",
+                            "opendaylight-flow-statistics:flow-statistics": {
+                                "packet-count": 422,
+                                "duration": {
+                                    "nanosecond": 599000000,
+                                    "second": 2104
+                                },
+                                "byte-count": 35870
+                            },
+                            "priority": 100,
+                            "table_id": 0,
+                            "cookie_mask": 0,
+                            "hard-timeout": 0,
+                            "match": {
+                                "ethernet-match": {
+                                    "ethernet-type": {
+                                        "type": 35020
+                                    }
+                                }
+                            },
+                            "cookie": 3098476543630901000,
+                            "flags": "",
+                            "instructions": {
+                                "instruction": [
+                                    {
+                                        "order": 0,
+                                        "apply-actions": {
+                                            "action": [
+                                                {
+                                                    "order": 0,
+                                                    "output-action": {
+                                                        "max-length": 65535,
+                                                        "output-node-connector": "CONTROLLER"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            "idle-timeout": 0
+                        },
+                        {
+                            "id": "L2switch-0",
+                            "opendaylight-flow-statistics:flow-statistics": {
+                                "packet-count": 1,
+                                "duration": {
+                                    "nanosecond": 599000000,
+                                    "second": 2104
+                                },
+                                "byte-count": 70
+                            },
+                            "priority": 0,
+                            "table_id": 0,
+                            "cookie_mask": 0,
+                            "hard-timeout": 0,
+                            "match": {},
+                            "cookie": 3098476543630901000,
+                            "flags": "",
+                            "idle-timeout": 0
+                        },
+                        {
+                            "id": "L2switch-7",
+                            "opendaylight-flow-statistics:flow-statistics": {
+                                "packet-count": 7,
+                                "duration": {
+                                    "nanosecond": 154000000,
+                                    "second": 2099
+                                },
+                                "byte-count": 490
+                            },
+                            "priority": 2,
+                            "table_id": 0,
+                            "cookie_mask": 0,
+                            "hard-timeout": 0,
+                            "match": {
+                                "in-port": "1"
+                            },
+                            "cookie": 3098476543630901000,
+                            "flags": "",
+                            "instructions": {
+                                "instruction": [
+                                    {
+                                        "order": 0,
+                                        "apply-actions": {
+                                            "action": [
+                                                {
+                                                    "order": 2,
+                                                    "output-action": {
+                                                        "max-length": 65535,
+                                                        "output-node-connector": "CONTROLLER"
+                                                    }
+                                                },
+                                                {
+                                                    "order": 1,
+                                                    "output-action": {
+                                                        "max-length": 65535,
+                                                        "output-node-connector": "2"
+                                                    }
+                                                },
+                                                {
+                                                    "order": 0,
+                                                    "output-action": {
+                                                        "max-length": 65535,
+                                                        "output-node-connector": "3"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            "idle-timeout": 0
+                        },
+                        {
+                            "id": "L2switch-6",
+                            "opendaylight-flow-statistics:flow-statistics": {
+                                "packet-count": 6,
+                                "duration": {
+                                    "nanosecond": 154000000,
+                                    "second": 2099
+                                },
+                                "byte-count": 420
+                            },
+                            "priority": 2,
+                            "table_id": 0,
+                            "cookie_mask": 0,
+                            "hard-timeout": 0,
+                            "match": {
+                                "in-port": "2"
+                            },
+                            "cookie": 3098476543630901000,
+                            "flags": "",
+                            "instructions": {
+                                "instruction": [
+                                    {
+                                        "order": 0,
+                                        "apply-actions": {
+                                            "action": [
+                                                {
+                                                    "order": 2,
+                                                    "output-action": {
+                                                        "max-length": 65535,
+                                                        "output-node-connector": "CONTROLLER"
+                                                    }
+                                                },
+                                                {
+                                                    "order": 1,
+                                                    "output-action": {
+                                                        "max-length": 65535,
+                                                        "output-node-connector": "1"
+                                                    }
+                                                },
+                                                {
+                                                    "order": 0,
+                                                    "output-action": {
+                                                        "max-length": 65535,
+                                                        "output-node-connector": "3"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            "idle-timeout": 0
+                        },
+                        {
+                            "id": "L2switch-5",
+                            "opendaylight-flow-statistics:flow-statistics": {
+                                "packet-count": 19,
+                                "duration": {
+                                    "nanosecond": 154000000,
+                                    "second": 2099
+                                },
+                                "byte-count": 1330
+                            },
+                            "priority": 2,
+                            "table_id": 0,
+                            "cookie_mask": 0,
+                            "hard-timeout": 0,
+                            "match": {
+                                "in-port": "3"
+                            },
+                            "cookie": 3098476543630901000,
+                            "flags": "",
+                            "instructions": {
+                                "instruction": [
+                                    {
+                                        "order": 0,
+                                        "apply-actions": {
+                                            "action": [
+                                                {
+                                                    "order": 1,
+                                                    "output-action": {
+                                                        "max-length": 65535,
+                                                        "output-node-connector": "1"
+                                                    }
+                                                },
+                                                {
+                                                    "order": 0,
+                                                    "output-action": {
+                                                        "max-length": 65535,
+                                                        "output-node-connector": "2"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            "idle-timeout": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        "path": "http://localhost:8181/restconf/operational/opendaylight-inventory:nodes/node/openflow:1/flow-node-inventory:table/0",
+        "collection": "Flow",
+        "method": "GET",
+        "status": "",
+        "name": "",
+        "timestamp": 1579105899435
+    }
+]

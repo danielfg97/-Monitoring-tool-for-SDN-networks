@@ -1,0 +1,90 @@
+version: '3'
+services:
+  elasticsearch:
+    image: elasticsearch:6.7.2
+    container_name: elasticsearch
+    ports:
+     - "9200:9200"
+     - "9300:9300"
+    volumes:
+     - ./elasticsearch/data:/usr/share/elasticsearch/data
+     - ./elasticsearch/data/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    networks:
+      net1:
+        ipv4_address: 10.0.1.11
+
+  opendaylight:
+    image: opendaylight:5.0
+    container_name: opendaylight
+    ports:
+     - "6633:6633"
+     - "8181:8181"
+     - "8101:8101"
+    networks:
+      net1:
+        ipv4_address: 10.0.1.12
+
+  mininet:
+    image: mininet:2.2.2
+    container_name: mininet
+    depends_on:
+     - opendaylight
+    tty: true
+    privileged: true
+    environment:
+     - QT_X11_NO_MITSHM=1
+     - DISPLAY
+     - TERM
+    volumes:
+     - /tmp/.X11-unix:/tmp/.X11-unix
+     - /lib/modules:/lib/modules
+     - ./network/mininet:/home/danielfg97/mininet
+    networks:
+      net1:
+        ipv4_address: 10.0.1.13
+
+  logstash:
+    image: logstash:6.7.2
+    container_name: logstash
+    volumes:
+     - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+     - ./logstash/pipeline:/usr/share/logstash/pipeline
+    depends_on:
+     - elasticsearch
+     - opendaylight
+    logging:
+     driver: "none"
+    networks:
+      net1:
+        ipv4_address: 10.0.1.14
+
+  kibana:
+    image: kibana:6.7.2
+    container_name: kibana
+    volumes:
+     - ./kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
+     - ./kibana/plugins/:/usr/share/kibana/plugins
+    depends_on:
+     - elasticsearch
+    ports:
+     - "5601:5601"
+    networks:
+      net1:
+        ipv4_address: 10.0.1.15
+        
+  sflow:
+    image: sflow
+    container_name: sflow
+    ports:
+     - "8008:8008"
+     - "6343:6343"
+    networks:
+      net1:
+        ipv4_address: 10.0.1.16
+
+networks:
+  net1:
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.0.1.0/24
